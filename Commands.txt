@@ -1,0 +1,14 @@
+Pip install -r requirements.txt
+
+django-admin startproject BookStore
+
+Python .\manage.py startapp Books
+
+
+Python manage.py makemigrations
+
+
+Python manage.py migrate
+
+
+python manage.py runserver

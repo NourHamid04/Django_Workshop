@@ -1,0 +1,7 @@
+Django>=3.2,<5.0
+django-ninja>=0.14.0
+pydantic>=1.8.2
+uvicorn>=0.14.0
+gunicorn>=20.1.0
+httpx>=0.21.1
+psycopg2-binary>=2.9.3  # Only if using PostgreSQL, optional
