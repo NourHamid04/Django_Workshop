@@ -24,12 +24,12 @@ def create_author(request, payload: AuthorCreateSchema):
 def get_author(request, author_id: int):
     return get_object_or_404(Author, id=author_id)
 
-@api.put("/authors/{author_id}", response=AuthorSchema)
+@api.put('/authors/{author_id}', response=AuthorSchema)
 def update_author(request, author_id: int, payload: AuthorCreateSchema):
-    author = get_object_or_404(Author, id=author_id)
-    for attr, value in payload.dict().items():
-        setattr(author, attr, value)
+    author = Author.objects.get(id=author_id)
+    author.name = payload.name
     author.save()
+
     return author
 
 @api.delete("/authors/{author_id}")
